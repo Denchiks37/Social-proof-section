@@ -1,0 +1,253 @@
+/* 
+### Primary
+
+Very Dark Magenta: hsl(300, 43%, 22%)
+Soft Pink: hsl(333, 80%, 67%)
+
+### Neutral
+
+Dark Grayish Magenta: hsl(303, 10%, 53%)
+Light Grayish Magenta: hsl(300, 24%, 96%)
+White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Font
+
+- Family: [League Spartan](https://fonts.google.com/specimen/League+Spartan)
+- Weights: 400, 500, 700
+*/
+
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+:root {
+  --very-pink-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+html {
+  background: url(./images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover;
+}
+
+body {
+  background: url(./images/bg-pattern-top-desktop.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 40%;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  min-width: 80%;
+  min-height: 80%;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.title-description {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-size: 62px;
+  max-width: 15ch;
+  color: var(--very-pink-magenta);
+  line-height: 0.9;
+}
+
+.description {
+  max-width: 40ch;
+  color: var(--dark-grayish-magenta);
+}
+
+.rating-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  min-width: 600px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 16px 32px;
+  width: 500px;
+  background-color: var(--light-grayish-magenta);
+  border-radius: 5px;
+}
+
+.stars {
+  display: flex;
+  gap: 8px;
+}
+
+.rating-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--very-pink-magenta);
+}
+
+.comment-section {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  min-height: 310px;
+}
+
+.comment-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: var(--very-pink-magenta);
+  color: var(--light-grayish-magenta);
+  padding: 48px;
+  border-radius: 10px;
+}
+
+.photo-author {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.author-photo {
+  border-radius: 50%;
+  width: 48px;
+}
+
+.author {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.verified {
+  color: var(--soft-pink);
+  font-weight: 400;
+  letter-spacing: 0.7px;
+}
+
+.comments {
+  max-width: 30ch;
+  font-weight: 400;
+}
+
+.left {
+  align-self: flex-start;
+}
+.center {
+  align-self: center;
+}
+.right {
+  align-self: flex-end;
+}
+.up {
+  align-self: flex-start;
+}
+.center-card {
+  align-self: center;
+}
+.bottom-card {
+  align-self: flex-end;
+}
+
+@media (max-width: 860px) {
+  html {
+    background: none;
+  }
+
+  body {
+    background-size: 100%;
+    min-height: 100vh;
+    place-content: center center;
+  }
+
+  .main {
+    gap: 48px;
+  }
+
+  .top-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 96px;
+    gap: 32px;
+  }
+
+  .description {
+    max-width: 30ch;
+    align-self: center;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .rating-section {
+    max-width: 300px;
+  }
+
+  .rating {
+    flex-direction: column;
+    gap: 4px;
+    max-width: 300px;
+    padding: 12px 32px;
+  }
+
+  .comment-section {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 96px;
+  }
+
+  .comment-card {
+    padding: 32px;
+    max-width: 33ch;
+  }
+
+  .left,
+  .center,
+  .right,
+  .up,
+  .center-card,
+  .bottom-card {
+    align-self: center;
+  }
+}
